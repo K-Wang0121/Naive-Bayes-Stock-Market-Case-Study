@@ -109,6 +109,7 @@ prediction['Accuracy'] = np.where(prediction['Prediction(s)'] == prediction['Act
 prediction_accuracy = prediction['Accuracy'].value_counts()[1] / (prediction['Accuracy'].value_counts()[0] + prediction['Accuracy'].value_counts()[1])
 
 
+#################################Streamlit Code############################################
 
 st.set_page_config(layout="wide")
 with st.sidebar: 
@@ -117,8 +118,8 @@ with st.sidebar:
 		options = ['Introduction', 'Background Information', 'Data Cleaning', 
 		'Data Analysis', 'Conclusion', 'Bibliography'],
 		menu_icon = 'menu-up',
-		icons = ['bookmark-check', 'book', 'clipboard2-check', 'map', 'boxes', 'bar-chart', 
-		'check2-circle','blockquote-left'],
+		icons = ['bookmark-check', 'book', 'aspect-ratio', 'map', 'bar-chart', 
+		'blockquote-left'],
 		default_index = 0
 		)
 
@@ -126,8 +127,8 @@ with st.sidebar:
 if selected == 'Introduction':
     st.title('Introduction')
     st.image("/Users/kevin/Desktop/Data Science Projects/Project 2 - Naive Bayes Prediction Model/Stock Market - abc_news.jpg", caption='Yet another terrible day for stock traders, while the economy continues to take a hit admist the covid-19 outbreak. Source:https://abcnews.go.com/Business/stock-market-futures-plummet-fed-intervention/story?id=69617320')
-    st.markdown('In this stock market case study, top stocks to invest in for the financial year 2016 is going to be determined based on the \'earnings per share\' variable. Specifically, we\'re going to build a naive bayes prediction model which requires converting \'earnings per share\' from a numerical to a binary variables, with data values that are higher than the average of the \'earnings per share\' variable in correspondingly to each of the training and test dataset, and implement the model on the test dataset to classify values for the predictor variable as either \'high\' or \'low\'.')
-    st.markdown('The naive bayes classifier works by ')
+    st.markdown('In this stock market case study, top stocks to invest in for the financial year 2016 is going to be determined based on the \'earnings per share\' variable. Specifically, we\'re going to build a naive bayes prediction model which requires converting \'earnings per share\' from a numerical to a binary variables, with data values that are higher than the average of the \'earnings per share\' variable in correspondingly to each of the training and test dataset, and to implement the model on the test dataset to classify values for the predictor variable as either \'high\' or \'low\'.')
+    st.markdown('According to https://towardsdatascience.com/introduction-to-naive-bayes-classification-4cffabb1ae54: "Naive Bayes is a simple, yet effective and commonly-used, machine learning classifier. It is a probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting. It can also be represented using a very simple Bayesian network."')
     st.markdown('')
     st.markdown('')
     st.markdown('')
