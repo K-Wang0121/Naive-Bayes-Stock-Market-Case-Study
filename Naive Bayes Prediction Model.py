@@ -14,10 +14,10 @@ import requests
 from streamlit_lottie import st_lottie
 pd.options.plotting.backend = "plotly"
 
-fundamentals = pd.read_csv('/Users/kevin/Desktop/Data Science Projects/Project 2 - Naive Bayes Prediction Model/fundamentals.csv')
+fundamentals = pd.read_csv('fundamentals.csv')
 cleaned_columns = [column.replace('\'', '').replace('.', '').replace(' ', '_').replace('-', '_').replace('/', '_').lower() for column in fundamentals.columns]
 fundamentals.columns = cleaned_columns
-securities = pd.read_csv('/Users/kevin/Desktop/Data Science Projects/Project 2 - Naive Bayes Prediction Model/securities.csv')
+securities = pd.read_csv('securities.csv')
 securities.columns = [column.replace(' ', '_').lower() for column in securities.columns]
 combined = fundamentals.merge(securities, on='ticker_symbol')
 combined_training = combined[combined['period_ending'] <= '2015-12-31'].copy()
@@ -28,7 +28,7 @@ combined_training = combined_training.copy()
 combined_training['period_ending'] = pd.to_datetime(combined_training['period_ending'])
 combined_training = combined_training.copy()
 combined_training['year'] = combined_training['period_ending'].dt.year
-prices = pd.read_csv('/Users/kevin/Desktop/Data Science Projects/Project 2 - Naive Bayes Prediction Model/prices.csv')
+prices = pd.read_csv('prices.csv')
 prices['date'] = pd.to_datetime(prices['date'])
 prices['year'] = prices['date'].dt.year
 prices.rename({'symbol':'ticker_symbol'}, axis=1, inplace=True)
@@ -126,7 +126,7 @@ with st.sidebar:
 
 if selected == 'Introduction':
     st.title('Introduction')
-    st.image("/Users/kevin/Desktop/Data Science Projects/Project 2 - Naive Bayes Prediction Model/Stock Market - abc_news.jpg", caption='Yet another terrible day for stock traders, while the economy continues to take a hit admist the covid-19 outbreak. Source:https://abcnews.go.com/Business/stock-market-futures-plummet-fed-intervention/story?id=69617320')
+    st.image("Stock Market - abc_news.jpg", caption='Yet another terrible day for stock traders, while the economy continues to take a hit admist the covid-19 outbreak. Source:https://abcnews.go.com/Business/stock-market-futures-plummet-fed-intervention/story?id=69617320')
     st.markdown('In this stock market case study, top stocks to invest in for the financial year 2016 is going to be determined based on the \'earnings per share\' variable. Specifically, we\'re going to build a naive bayes prediction model which requires converting \'earnings per share\' from a numerical to a binary variables, with data values that are higher than the average of the \'earnings per share\' variable in correspondingly to each of the training and test dataset, and to implement the model on the test dataset to classify values for the predictor variable as either \'high\' or \'low\'.')
     st.markdown('According to https://towardsdatascience.com/introduction-to-naive-bayes-classification-4cffabb1ae54: "Naive Bayes is a simple, yet effective and commonly-used, machine learning classifier. It is a probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting. It can also be represented using a very simple Bayesian network."')
     st.markdown('')
