@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Naive Bayes Prediction Model.py
+web: sh setup.sh && streamlit run Naive_Bayes_Prediction_Model.py
