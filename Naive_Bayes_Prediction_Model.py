@@ -304,22 +304,6 @@ if selected == 'Data Analysis':
     st.subheader('Implementing the Prediction Model')
     st.code('classify(combined_training, combined_training, [\'open\', \'close\', \'low\', \'high\'], 1, 16)', language='Python')
     st.markdown('Based on the output of the naive bayes prediction model, the next step is to determine the firm with the highest value count for \'High\'s for the target variable, which will be the top firm to invest in for the financial year 2016 based on the \'earnings per share\' variable.')
-    st.code('# Calculating the number of times a firm has \'High\' as a value for the \'earnings per share\' variable'  
-    'companies_earnings_per_share = {}'
-    'firms = prediction[\'Ticker_Symbol\'].unique().tolist()'
-    'for company in firms:'
-    'companies_earnings_per_share[company] = 0'
-    'for company in prediction[\'Ticker_Symbol\'].unique():'
-    'c = 0'
-    'company_dataset = prediction[prediction[\'Ticker_Symbol\'] == company]'
-       ' for value in company_dataset[\'Prediction(s)\']:'
-        'if value == \'High\':'
-            'c += 1'
-        'else:'
-            'c += 0'
-    'companies_earnings_per_share[company] = c'
-    '# Determining the firm with the highest value count for \'High\'s of the target variable'
-        'max_value = max(companies_earnings_per_share, key=companies_earnings_per_share.get)', language='Python')
     st.markdown('According to the output of the code, the firm with the highest value count for \'High\'s in the \'earnings per share\' variable is the company with ticker symbol \'ADS\', which is short for Alliance Data Systems Corporation.')
     st.subheader('Evaluating the Prediction Model\'s Accuracy')
     st.code('prediction = classify(combined_training, combined_training, [\'open\', \'close\', \'low\', \'high\'], 1, 16)'
