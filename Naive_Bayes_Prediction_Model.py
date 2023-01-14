@@ -121,10 +121,10 @@ st.set_page_config(layout="wide")
 with st.sidebar: 
 	selected = option_menu(
 		menu_title = 'Navigation Pane',
-		options = ['Introduction', 'Background Information', 'Data Cleaning', 
+		options = ['Introduction', 'Background Information', 'Data Cleaning', 'Exploratory Analysis',
 		'Data Analysis', 'Conclusion', 'Bibliography'],
 		menu_icon = 'menu-up',
-		icons = ['bookmark-check', 'book', 'aspect-ratio', 'map', 'bar-chart', 
+		icons = ['bookmark-check', 'book', 'aspect-ratio', 'check2-circle', 'map', 'bar-chart', 
 		'blockquote-left'],
 		default_index = 0
 		)
